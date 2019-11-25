@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &193597791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -598,6 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1166808727}
+  - component: {fileID: 1166808728}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -619,6 +620,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1166808728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166808726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc694b8275e5544f39cade109c58a3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1442790442
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,44 +740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - clip: {fileID: 0}
-    volume: 0.59
     name: 
-    pitch: 1.59
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
-    source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    name: 
-    pitch: 0
+    volume: 0.5
+    pitch: 1
     source: {fileID: 0}
 --- !u!4 &1529856413
 Transform:
@@ -1050,7 +1028,7 @@ GameObject:
   - component: {fileID: 1800611426}
   m_Layer: 0
   m_Name: User Interface Manager
-  m_TagString: Untagged
+  m_TagString: UI_Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1065,6 @@ MonoBehaviour:
   interfaces:
   - userInterface: {fileID: 193597790}
     name: Startscreen
-    isActive: 0
 --- !u!1 &2078812373
 GameObject:
   m_ObjectHideFlags: 0
