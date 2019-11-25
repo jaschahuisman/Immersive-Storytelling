@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class UserInterface : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Interfaces[] interfaces;
+
+    public void Start()
     {
-        
+        // foreach (Interfaces i in interfaces)
+        // {
+        //     print(i);
+        //     i.userInterface.SetActive(false);
+        // }
+        toggleUI("Startscreen");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void pushUI(string name)
     {
-        
+        foreach (Interfaces i in interfaces)
+        {
+
+            if (i.name == name)
+            {
+                print(i.name + " " + name);
+                i.userInterface.SetActive(true);
+            }
+            // print(i);
+        }
+    }
+
+    public void popUI(string name)
+    {
+        foreach (Interfaces i in interfaces)
+        {
+            if (i.name == name)
+            {
+                print(i.name + " " + name);
+                i.userInterface.SetActive(false);
+            }
+        }
+    }
+
+    public void toggleUI(string name)
+    {
+        foreach (Interfaces i in interfaces)
+        {
+            if (i.name == name) { i.userInterface.SetActive(!i.userInterface.activeInHierarchy); }
+        }
     }
 }
