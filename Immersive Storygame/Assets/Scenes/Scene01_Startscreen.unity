@@ -978,10 +978,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbea6913d09e4fe5a2881f0fc274d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeVolume: {fileID: 669891208}
   currentSaturation: 0
   targetSaturation: 0
   saturationSpeed: 1
-  activeVolume: {fileID: 669891208}
+  currentVignetteIntensity: 0
+  targetVignetteIntensity: 1
+  vignetteIntensitySpeed: 1
 --- !u!1 &669891207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,13 +2564,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 534669907}
-        m_MethodName: setTargetSaturation
+        m_MethodName: setTargetVignetteIntensity
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 100
+          m_FloatArgument: 0.4
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
