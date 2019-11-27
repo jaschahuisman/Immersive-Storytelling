@@ -7,23 +7,19 @@ public class PostSettings : MonoBehaviour
 {
     public PostProcessVolume activeVolume;
 
-    public void toggleCG(bool value)
+    public void toggleCG()
     {
         ColorGrading colorGrading;
         activeVolume.profile.TryGetSettings(out colorGrading);
-
-        if (value)
-        {
-            colorGrading.active = true;
-        }
-        else 
+        print(colorGrading.active);
+        if (colorGrading.active == true)
         {
             colorGrading.active = false;
         }
+        else if (colorGrading.active == false)
+        {
+            colorGrading.active = true;
+        }
     }
-
-    // public PostProcessProfile effects;
-    // public float vignette = 0f;
-    // public float saturation = 0f;
-
 }
+

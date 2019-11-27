@@ -7,6 +7,8 @@ public class StartScreen : MonoBehaviour
     // Define Scene Manager GameObject
     GameObject SceneObject;
     Scenes scene;
+    
+    public string nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class StartScreen : MonoBehaviour
         bool userInput = Input.GetKeyDown("space");
         if (userInput == true)
         {
-            scene.ChangeToScene("Scene02_Prologue");
+            scene.ChangeToScene(nextScene);
         }
 
     }
