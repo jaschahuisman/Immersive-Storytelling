@@ -13,14 +13,14 @@ public class PostSettings : MonoBehaviour
     public float currentSaturation;
     [Range (-100.0f, 100.0f)]
     public float targetSaturation;
-    public float saturationSpeed;
+    public float saturationSpeed = 1;
 
     // Vignette
     Vignette vignette;
     public float currentVignetteIntensity;
     [Range (0.0f, 1.0f)]
     public float targetVignetteIntensity;
-    public float vignetteIntensitySpeed;
+    public float vignetteIntensitySpeed = 1;
 
     public void Start()
     {
