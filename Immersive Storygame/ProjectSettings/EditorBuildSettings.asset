@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene01_Startscreen.unity
     guid: 7ab7c11c822f14911bfefbc94e593c8c
   - enabled: 1
-    path: Assets/Scenes/Scene02_Prologue.unity
+    path: Assets/Scenes/Scene04_Gameplay.unity
     guid: e9aa06a4846dc463dbd0e4a216d5d06b
   - enabled: 1
-    path: Assets/Scenes/Scene03.unity
+    path: Assets/Scenes/Scene02_Prologue.unity
     guid: 43a5c7dde47944dca8cc995cc2684471
   - enabled: 1
     path: Assets/Scenes/TestingScene.unity
