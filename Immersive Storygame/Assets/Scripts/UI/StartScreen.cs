@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class StartScreen : MonoBehaviour
 {
-    // Define Scene Manager GameObject
-    GameObject SceneObject;
-    Scenes scene;
-    
     public string nextScene;
+    public Scenes sceneManager;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Get UserInterface Class of UI_Object
-        SceneObject = GameObject.FindWithTag("GameManager");
-        scene = SceneObject.GetComponent<Scenes>();
+        audioManager.Play("Homescreen");
     }
 
     // Update is called once per frame
@@ -24,7 +20,7 @@ public class StartScreen : MonoBehaviour
         bool userInput = Input.GetKeyDown("space");
         if (userInput == true)
         {
-            scene.ChangeToScene(nextScene);
+            sceneManager.ChangeToScene(nextScene);
         }
 
     }
