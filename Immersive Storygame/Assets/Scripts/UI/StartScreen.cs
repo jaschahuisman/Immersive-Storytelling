@@ -11,7 +11,8 @@ public class StartScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioManager.Play("Homescreen");
+        audioManager.Play("Anubis");
+        audioManager.Play("Music");
     }
 
     // Update is called once per frame
