@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class PrologueScreens : MonoBehaviour
 {
-    public AudioManager audioManager;
     public UserInterface userInterfaceManager;
-
     public int UserInterfaceState;
+
+    private GameObject sceneManagerObj;
+    private Scenes sceneManager;
+    private GameObject audioManagerObj;
+    private AudioManager audioManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        SceneSetup();
         UserInterfaceState = 0;
         userInterfaceManager.popAll();
-        audioManager.Play("Prologue_Music");
+        audioManager.Stop("Anubis");
+        audioManager.Play("Prologue_Mud_Music");
+    }
+
+    public void SceneSetup()
+    {
+        sceneManagerObj = GameObject.FindGameObjectWithTag("GameManager");
+        sceneManager = sceneManagerObj.GetComponent<Scenes>();
+        audioManagerObj = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = audioManagerObj.GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +53,7 @@ public class PrologueScreens : MonoBehaviour
         else if (UserInterfaceState > 1)
         {
             userInterfaceManager.popUI("Text2");
+            sceneManager.ChangeToScene("Scene04_Gameplay");
         }
     }
 }

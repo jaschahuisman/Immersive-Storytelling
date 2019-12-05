@@ -150,8 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: Scene02_Prologue
-  sceneManager: {fileID: 1166808728}
-  audioManager: {fileID: 1529856412}
 --- !u!4 &115391169
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +392,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -2.3352592e+27, y: 1.2160091e-20, z: 0.10040315, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1529,7 +1527,7 @@ GameObject:
   - component: {fileID: 1529856412}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1547,11 +1545,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 0}
-    name: 
-    volume: 0
-    pitch: 0
-    loop: 0
+  - clip: {fileID: 8300000, guid: b11a935bc771a433dba196942668510f, type: 3}
+    name: Prologue_Mud_Music
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &1529856413
 Transform:

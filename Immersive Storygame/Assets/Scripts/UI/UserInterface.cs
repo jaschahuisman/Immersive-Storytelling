@@ -30,7 +30,6 @@ public class UserInterface : MonoBehaviour
     {
         foreach (Interfaces i in interfaces)
         {
-            print(name + " " + i.name);
             if (i.name == name)
             {
                 i.userInterface.SetActive(true);

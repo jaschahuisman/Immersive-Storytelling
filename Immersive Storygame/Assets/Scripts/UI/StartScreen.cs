@@ -5,24 +5,34 @@ using UnityEngine;
 public class StartScreen : MonoBehaviour
 {
     public string nextScene;
-    public Scenes sceneManager;
-    public AudioManager audioManager;
+    private GameObject sceneManagerObj;
+    private Scenes sceneManager;
+    private GameObject audioManagerObj;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        SceneSetup();
         audioManager.Play("Anubis");
-        audioManager.Play("Music");
+    }
+
+    public void SceneSetup()
+    {
+        sceneManagerObj = GameObject.FindGameObjectWithTag("GameManager");
+        sceneManager = sceneManagerObj.GetComponent<Scenes>();
+        audioManagerObj = GameObject.FindGameObjectWithTag("AudioManager");
+        audioManager = audioManagerObj.GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         bool userInput = Input.GetKeyDown("space");
+        // Press space to start game
         if (userInput == true)
         {
             sceneManager.ChangeToScene(nextScene);
         }
-
     }
 }

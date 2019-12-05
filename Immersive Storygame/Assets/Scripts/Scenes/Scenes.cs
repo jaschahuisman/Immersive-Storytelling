@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Scenes : MonoBehaviour
 {
-    // Define UI Manager GameObject
-    // GameObject UI_Object;
-    // UserInterface UI;
+    public static Scenes instance;
 
-    // Start the Game
-    void Start()
+    void Awake()
     {
-        // Get UserInterface Class of UI_Object
-        // UI_Object = GameObject.FindWithTag("UI_Manager");
-        // UI = UI_Object.GetComponent<UserInterface>();
+        if (instance == null)
+        { instance = this;}
+        else {Destroy(gameObject);}
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ChangeToScene(string sceneToChangeTo)
