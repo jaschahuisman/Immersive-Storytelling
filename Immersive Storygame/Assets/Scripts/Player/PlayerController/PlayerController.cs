@@ -74,8 +74,9 @@ public class PlayerController : MonoBehaviour
         inputX = Input.GetAxis("Horizontal");
         inputZ = Input.GetAxis("Vertical");
 
-        // anim.SetFloat("InputZ", InputZ, 0.0f, Time.deltaTime * 2f); 
-        // anim.SetFloat("InputX", InputX, 0.0f, Time.deltaTime * 2f); 
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetFloat("InputZ", inputZ, 0.0f, Time.deltaTime * 2f); 
+        anim.SetFloat("InputX", inputX, 0.0f, Time.deltaTime * 2f); 
 
         speed = new Vector2(inputX, inputZ).sqrMagnitude;
         if (speed > allowPlayerRotation)
