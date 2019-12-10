@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class DoorManager : MonoBehaviour
@@ -17,7 +18,8 @@ public class DoorManager : MonoBehaviour
     public bool lockOnExit;
 
     // Door Distances
-    public Vector3 openDistance = new Vector3(0, 0, 0);
+    public float openDistance;
+    Vector3 openVector;
     Vector3 closedDistance;
     Vector3 desiredPos;
 
@@ -28,12 +30,15 @@ public class DoorManager : MonoBehaviour
     GameObject UserInterfaceObj;
     UserInterface userInterFaceManager;
 
+    // Door Sound
+    public AudioSource doorAudio;
 
     public void Start()
     {
+        openVector = new Vector3(0,0, openDistance);
         UserInterfaceObj = GameObject.FindGameObjectWithTag("UI_Manager");
         userInterFaceManager = UserInterfaceObj.GetComponent<UserInterface>();
-        closedDistance = doorObject.transform.position;
+        closedDistance = doorObject.transform.localPosition;
     }
 
 
@@ -45,17 +50,28 @@ public class DoorManager : MonoBehaviour
         if (isLocked == false)
         {
             // Open Door On Enter
-            if (isInTrigger == true && openOnEnter == true && closeOnEnter == false) isOpen = true;
+            if (isInTrigger == true && openOnEnter == true && closeOnEnter == false)
+            {
+                isOpen = true;
+            }
 
             // Close Door On Enter 
-            if (isInTrigger == true && closeOnEnter == true && openOnEnter == false) isOpen = false;
+            if (isInTrigger == true && closeOnEnter == true && openOnEnter == false)
+            {
+                PlayDoorSound();
+                isOpen = false;
+            }
 
             // Close Door On Exit
-            if (isInTrigger == false && closeOnExit == true) isOpen = false;
+            if (isInTrigger == false && closeOnExit == true)
+            {
+                isOpen = false;
+            }
 
             // Open Door On Action
             if (isInTrigger == true && openOnEnter == false && userInput == true && closeOnEnter == false)
             {
+                PlayDoorSound();
                 isOpen = true;
                 userInterFaceManager.popUI("OpenDoor");
             }
@@ -70,11 +86,17 @@ public class DoorManager : MonoBehaviour
             closeOnExit = true;
 
         if (isOpen == true)
-            desiredPos = openDistance;
+            desiredPos = openVector;
         else if (isOpen == false)
             desiredPos = closedDistance;
 
-        doorObject.transform.position = Vector3.Lerp(doorObject.transform.position, desiredPos, openSpeed * Time.deltaTime);
+        doorObject.transform.localPosition = Vector3.Lerp(doorObject.transform.localPosition, desiredPos, openSpeed * Time.deltaTime);
+    }
+
+    public void PlayDoorSound()
+    {
+        doorAudio.pitch = Random.Range(0.9f, 1.1f);
+        doorAudio.Play();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -90,6 +112,11 @@ public class DoorManager : MonoBehaviour
             else if (isLocked == true)
             {
                 userInterFaceManager.pushUI("DoorIsLocked");
+            }
+
+            if (openOnEnter == true && isOpen == false)
+            {
+                PlayDoorSound();
             }
         }
         else
@@ -110,6 +137,11 @@ public class DoorManager : MonoBehaviour
         if (lockOnExit == true)
         {
             isLocked = true;
+        }
+
+        if (isOpen == true && closeOnExit == true)
+        {
+            PlayDoorSound();
         }
     }
 }
