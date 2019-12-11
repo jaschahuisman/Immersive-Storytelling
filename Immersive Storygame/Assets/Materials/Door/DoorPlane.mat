@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: DoorPlane
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
-  m_LightmapFlags: 1
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -62,9 +62,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.736
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.964
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.80544674, g: 0.9433962, b: 0.9337576, a: 1}
-    - _EmissionColor: {r: 0.123039216, g: 0.123039216, b: 0.123039216, a: 1}
+    - _Color: {r: 0.3066038, g: 0.9862789, b: 1, a: 0.8117647}
+    - _EmissionColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}

@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 1428706522594143469}
-  openSpeed: 2.5
+  openSpeed: 1.75
   isLocked: 0
   isOpen: 0
   openOnEnter: 0
