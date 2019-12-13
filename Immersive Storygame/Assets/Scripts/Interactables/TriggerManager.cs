@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class TriggerManager : MonoBehaviour
 {
-    public bool pickupOnAction;
+    public bool triggerOnAction;
     public string customMessage;
 
     // Audio
@@ -18,8 +18,14 @@ public class TriggerManager : MonoBehaviour
     public bool loop;
 
     // PickupTrigger
-    public bool pickupItem;
-    public GameObject ObjectToPickup;
+    public bool destroyItem;
+    public GameObject ObjectToDestroy;
+
+    // EnableTrigger
+    public bool gameObjectStateToggle;
+    public bool isToggle;
+    public bool stateToToggleTo;
+    public GameObject objectToToggle;
 
     // DoorTrigger
     public bool changeDoorGroupSettings;
@@ -62,16 +68,17 @@ public class TriggerManager : MonoBehaviour
     {
         bool userInput;
 
-        if (Input.GetKeyDown("e") || Input.GetAxis("Submit") != 0)
+        if (Input.GetKeyDown("e") || Input.GetAxis("Fire2") != 0)
         {
             userInput = true;
         }
         else userInput = false;
 
-        if (isInTrigger == true && pickupOnAction == true && userInput == true)
+        if (isInTrigger == true && triggerOnAction == true && userInput == true)
         {
-            if (pickupItem == true) PickupTrigger();
+            if (destroyItem == true) PickupTrigger();
             if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
+            if (gameObjectStateToggle == true) ToggleSomething();
             userInterFaceManager.popUI("CustomRAD");
             source.Play();
         }
@@ -82,14 +89,15 @@ public class TriggerManager : MonoBehaviour
         if (other.tag == "Player")
         {
             isInTrigger = true;
-            if (pickupOnAction == false)
+            if (triggerOnAction == false)
             {
-                if (pickupItem == true) PickupTrigger();
+                if (destroyItem == true) PickupTrigger();
                 if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
+                if (gameObjectStateToggle == true) ToggleSomething();
             }
         }
 
-        if (pickupOnAction == true)
+        if (triggerOnAction == true)
         {
             userInterFaceManager.pushRAD(customMessage);
         }
@@ -99,15 +107,16 @@ public class TriggerManager : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            isInTrigger = false;
             userInterFaceManager.popUI("CustomRAD");
         }
     }
 
     public void PickupTrigger()
     {
-        if (ObjectToPickup != null)
-            Destroy(ObjectToPickup, .5f);
-            // ObjectToPickup.SetActive(false);
+        if (ObjectToDestroy != null)
+            Destroy(ObjectToDestroy, .5f);
+        // ObjectToPickup.SetActive(false);
     }
 
     public void ChangeDoorGroupSettings()
@@ -134,5 +143,17 @@ public class TriggerManager : MonoBehaviour
                     dm.customUnlockMessage = customUnlockMessage;
                 }
             }
+    }
+
+    public void ToggleSomething()
+    {
+        if (isToggle)
+        {
+            objectToToggle.SetActive(!objectToToggle.activeInHierarchy);
+        }
+        else
+        {
+            objectToToggle.SetActive(stateToToggleTo);
+        }
     }
 }

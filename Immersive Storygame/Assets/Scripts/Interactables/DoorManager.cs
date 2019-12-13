@@ -53,7 +53,7 @@ public class DoorManager : MonoBehaviour
         // bool keyboardInput = Input.GetKeyDown("e");
         bool userInput;
 
-        if (Input.GetKeyDown("e") || Input.GetAxis("Submit") != 0)
+        if (Input.GetKeyDown("e") || Input.GetAxis("Fire2") != 0)
         {
             userInput = true;
         }
