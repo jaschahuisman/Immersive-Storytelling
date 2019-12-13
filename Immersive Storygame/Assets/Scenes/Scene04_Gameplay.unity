@@ -2243,7 +2243,7 @@ PrefabInstance:
     - target: {fileID: 1428706523527531095, guid: 687b3425d78794c9f8de8e2e975442fc,
         type: 3}
       propertyPath: isLocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1428706523527531095, guid: 687b3425d78794c9f8de8e2e975442fc,
         type: 3}
@@ -5704,10 +5704,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a288e39eb34244dc4af3259d8c71b118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAudioTrigger: 0
+  pickupOnAction: 1
+  customMessage: Yeet
+  audioClip: {fileID: 8300000, guid: 5ee26abf200a94f57bf2e3a7110ac797, type: 3}
+  volume: 1
+  pitch: 1
+  loop: 0
   pickupItem: 1
   ObjectToPickup: {fileID: 1631348499}
-  changeDoorGroupSettings: 1
+  changeDoorGroupSettings: 0
   isLocked: 0
   isOpen: 0
   openOnEnter: 0

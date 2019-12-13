@@ -30,7 +30,7 @@ public class DoorManager : MonoBehaviour
     // Player Collision
     bool isInTrigger;
 
-    // Door Object
+    // UI Object
     GameObject UserInterfaceObj;
     UserInterface userInterFaceManager;
 
@@ -51,7 +51,7 @@ public class DoorManager : MonoBehaviour
     {
         // bool controllerInput = Input.GetAxis("Submit") != null : true ? false;
         // bool keyboardInput = Input.GetKeyDown("e");
-        bool userInput; ;
+        bool userInput;
 
         if (Input.GetKeyDown("e") || Input.GetAxis("Submit") != 0)
         {
@@ -125,10 +125,10 @@ public class DoorManager : MonoBehaviour
             if (openOnEnter == false && isLocked == false && isOpen == false)
             {
                 string unlockMessage;
-                if (customLockMessage.Length > 0)
+                if (customUnlockMessage.Length > 0)
                     unlockMessage = customUnlockMessage;
                 else
-                    unlockMessage = "Press [] to scan chip";
+                    unlockMessage = "Press X to scan chip";
 
                 userInterFaceManager.pushRAD(unlockMessage);
                 // userInterFaceManager.pushUI("OpenDoor");

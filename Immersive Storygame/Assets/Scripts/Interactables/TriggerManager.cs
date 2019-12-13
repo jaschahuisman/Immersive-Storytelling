@@ -6,14 +6,16 @@ using UnityEngine.Audio;
 public class TriggerManager : MonoBehaviour
 {
     public bool pickupOnAction;
-    // // AudioTrigger
-    public bool isAudioTrigger;
-    // public AudioClip soundToPlay;
-    // [Range(0f, 1f)]
-    // public float volume;
-    // [Range(.1f, 3f)]
-    // public float pitch;
-    // public bool loop;
+    public string customMessage;
+
+    // Audio
+    public AudioClip audioClip;
+    private AudioSource source;
+    [Range(0f, 1f)]
+    public float volume;
+    [Range(.1f, 3f)]
+    public float pitch;
+    public bool loop;
 
     // PickupTrigger
     public bool pickupItem;
@@ -33,24 +35,45 @@ public class TriggerManager : MonoBehaviour
 
     private bool isInTrigger;
 
-
-
+    // UI
+    GameObject UserInterfaceObj;
+    UserInterface userInterFaceManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        UserInterfaceObj = GameObject.FindGameObjectWithTag("UI_Manager");
+        userInterFaceManager = UserInterfaceObj.GetComponent<UserInterface>();
+        gameObject.AddComponent<AudioSource>();
 
+        source = gameObject.GetComponent<AudioSource>();
+        if (audioClip != null)
+        {
+            source.clip = audioClip;
+            source.volume = volume;
+            source.pitch = pitch;
+            source.loop = loop;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isInTrigger == true && pickupOnAction == true)
+        bool userInput;
+
+        if (Input.GetKeyDown("e") || Input.GetAxis("Submit") != 0)
         {
-            if (isAudioTrigger == true) AudioTrigger();
+            userInput = true;
+        }
+        else userInput = false;
+
+        if (isInTrigger == true && pickupOnAction == true && userInput == true)
+        {
             if (pickupItem == true) PickupTrigger();
             if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
+            userInterFaceManager.popUI("CustomRAD");
+            source.Play();
         }
     }
 
@@ -61,10 +84,14 @@ public class TriggerManager : MonoBehaviour
             isInTrigger = true;
             if (pickupOnAction == false)
             {
-                if (isAudioTrigger == true) AudioTrigger();
                 if (pickupItem == true) PickupTrigger();
                 if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
             }
+        }
+
+        if (pickupOnAction == true)
+        {
+            userInterFaceManager.pushRAD(customMessage);
         }
     }
 
@@ -72,19 +99,15 @@ public class TriggerManager : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
+            userInterFaceManager.popUI("CustomRAD");
         }
-    }
-
-    public void AudioTrigger()
-    {
-
     }
 
     public void PickupTrigger()
     {
         if (ObjectToPickup != null)
-            Destroy(ObjectToPickup);
+            Destroy(ObjectToPickup, .5f);
+            // ObjectToPickup.SetActive(false);
     }
 
     public void ChangeDoorGroupSettings()
