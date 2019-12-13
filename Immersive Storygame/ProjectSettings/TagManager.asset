@@ -8,6 +8,7 @@ TagManager:
   - UI_Manager
   - GameManager
   - AudioManager
+  - UI_CustomText
   layers:
   - Default
   - TransparentFX

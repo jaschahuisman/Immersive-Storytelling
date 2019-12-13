@@ -17,6 +17,10 @@ public class DoorManager : MonoBehaviour
     public bool closeOnExit;
     public bool lockOnExit;
 
+    // Door Messages
+    public string customLockMessage;
+    public string customUnlockMessage;
+
     // Door Distances
     public float openDistance;
     Vector3 openVector;
@@ -35,7 +39,7 @@ public class DoorManager : MonoBehaviour
 
     public void Start()
     {
-        openVector = new Vector3(0,0, openDistance);
+        openVector = new Vector3(0, 0, openDistance);
         UserInterfaceObj = GameObject.FindGameObjectWithTag("UI_Manager");
         userInterFaceManager = UserInterfaceObj.GetComponent<UserInterface>();
         closedDistance = doorObject.transform.localPosition;
@@ -45,7 +49,15 @@ public class DoorManager : MonoBehaviour
 
     public void Update()
     {
-        bool userInput = Input.GetKeyDown("e");
+        // bool controllerInput = Input.GetAxis("Submit") != null : true ? false;
+        // bool keyboardInput = Input.GetKeyDown("e");
+        bool userInput; ;
+
+        if (Input.GetKeyDown("e") || Input.GetAxis("Submit") != 0)
+        {
+            userInput = true;
+        }
+        else userInput = false;
 
         if (isLocked == false)
         {
@@ -73,10 +85,15 @@ public class DoorManager : MonoBehaviour
             {
                 PlayDoorSound();
                 isOpen = true;
-                userInterFaceManager.popUI("OpenDoor");
+                // userInterFaceManager.popUI("OpenDoor");
+                userInterFaceManager.popUI("CustomRAD");
             }
-
         }
+        else if (isLocked == true)
+        {
+            isOpen = false;
+        }
+
 
 
         if (closeOnExit == true && isInTrigger == false)
@@ -107,14 +124,29 @@ public class DoorManager : MonoBehaviour
 
             if (openOnEnter == false && isLocked == false && isOpen == false)
             {
-                userInterFaceManager.pushUI("OpenDoor");
+                string unlockMessage;
+                if (customLockMessage.Length > 0)
+                    unlockMessage = customUnlockMessage;
+                else
+                    unlockMessage = "Press [] to scan chip";
+
+                userInterFaceManager.pushRAD(unlockMessage);
+                // userInterFaceManager.pushUI("OpenDoor");
+
             }
             else if (isLocked == true)
             {
-                userInterFaceManager.pushUI("DoorIsLocked");
+                // userInterFaceManager.pushUI("DoorIsLocked");
+                string lockMessage;
+                if (customLockMessage.Length > 0)
+                    lockMessage = customLockMessage;
+                else
+                    lockMessage = "You don't have access to this door";
+
+                userInterFaceManager.pushRAD(lockMessage);
             }
 
-            if (openOnEnter == true && isOpen == false)
+            if (openOnEnter == true && isOpen == false && isLocked == false)
             {
                 PlayDoorSound();
             }
@@ -130,8 +162,9 @@ public class DoorManager : MonoBehaviour
         if (other.tag == "Player")
         {
             isInTrigger = false;
-            userInterFaceManager.popUI("OpenDoor");
-            userInterFaceManager.popUI("DoorIsLocked");
+            // userInterFaceManager.popUI("OpenDoor");
+            userInterFaceManager.popUI("CustomRAD");
+            // userInterFaceManager.popUI("DoorIsLocked");
         }
 
         if (lockOnExit == true)

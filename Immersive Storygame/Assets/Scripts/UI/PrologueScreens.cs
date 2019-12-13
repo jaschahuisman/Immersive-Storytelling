@@ -34,7 +34,7 @@ public class PrologueScreens : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioManager.Stop("Homescreen");
+        // audioManager.Stop("Homescreen");
         bool userInput = Input.GetKeyDown("space");
         if (userInput == true)
         {

@@ -57,6 +57,32 @@ public class UserInterface : MonoBehaviour
         Debug.LogWarning("Can't find a UI Object with the name: '" + name + "'.");
     }
 
+    // Enable RAD With Custom Text
+    public void pushRAD(string customText)
+    {
+        GameObject customTextObj;
+        string name = "CustomRAD";
+        foreach (Interfaces i in interfaces)
+        {
+            if (i.name == name)
+            {
+                i.userInterface.SetActive(true);
+                customTextObj = GameObject.FindGameObjectWithTag("UI_CustomText");
+                // customText = ;
+
+                customTextObj.GetComponent<TMPro.TextMeshProUGUI>().text = customText;
+                // print(customTextObj.GetComponent<TMPro.TextMeshProUGUI>().text);
+                // print(i.userInterface.GetComponentInChildren<TextMesh>().text);
+                return;
+            }
+
+        }
+
+        Debug.LogWarning("Can't find a UI Object with the name: '" + name + "'.");
+    }
+
+
+
     // Toggle Interface GameObject with name
     public void toggleUI(string name)
     {
