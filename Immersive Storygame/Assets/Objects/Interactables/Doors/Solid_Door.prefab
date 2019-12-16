@@ -333,6 +333,8 @@ MonoBehaviour:
   closeOnEnter: 0
   closeOnExit: 1
   lockOnExit: 0
+  customLockMessage: 
+  customUnlockMessage: 
   openDistance: 1.5
   doorAudio: {fileID: 4966271622456529951}
 --- !u!82 &4966271622456529951
@@ -391,7 +393,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

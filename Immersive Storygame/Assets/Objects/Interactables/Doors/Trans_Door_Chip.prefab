@@ -204,7 +204,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6667559765934161349}
   m_Layer: 0
-  m_Name: Door Reception Left
+  m_Name: Trans_Door_Chip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
