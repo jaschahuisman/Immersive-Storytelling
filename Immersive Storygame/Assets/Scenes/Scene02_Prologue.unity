@@ -155,8 +155,8 @@ Camera:
   m_GameObject: {fileID: 257830533}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press space to continue
+  m_text: Press X to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 592516082}
-    characterCount: 23
+    characterCount: 19
     spriteCount: 0
     spaceCount: 3
     wordCount: 4
@@ -413,11 +413,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "During the construction of the new parts of the city, it rains heavily,
-    thanks to global warming. Due to the combination of the heavy rain and the soil
-    in the deforested area, several mudflows form. Maria lives nearby in an area where
-    many mudflows occur. One day she had to flee with her son Juan, and baby son Migu\xE9l.
-    They had never experienced anything so horrible before.\n"
+  m_text: Your objective is to discover the possibilities of the future and find your
+    way trough the hospital to get yourself chipped in the chip room.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -486,12 +483,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.7746582, z: 1.2854614, w: 0}
   m_textInfo:
     textComponent: {fileID: 751729792}
-    characterCount: 376
+    characterCount: 141
     spriteCount: 0
-    spaceCount: 67
-    wordCount: 67
+    spaceCount: 24
+    wordCount: 25
     linkCount: 0
-    lineCount: 6
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -572,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press space to continue
+  m_text: Press X to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -763,7 +760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1043771725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,12 +1107,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "It\u2019s the year 2033 when Colombia is still fighting against crime and
-    poverty in the country. The South American country wants to achieve a wealthy
-    future for its residents. However, the population has doubled in the past twenty
-    years. In the city of Bogota, more flats have been built and more forest area
-    has been cut down. There are even new living spaces built into the mountains around
-    the city, to save space and resources. \n"
+  m_text: 'June 5th 2050, Bogota.
+
+
+    It is your 18th birthday and like every 18 year old you have to get yourself chipped
+    with an identity chip, so that the socialist Colombian government has control
+    over its inhabitants to combat crime.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1184,12 +1181,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.4157715, z: 0.71954346, w: 0}
   m_textInfo:
     textComponent: {fileID: 2124117959}
-    characterCount: 430
+    characterCount: 224
     spriteCount: 0
-    spaceCount: 76
-    wordCount: 75
+    spaceCount: 39
+    wordCount: 39
     linkCount: 0
-    lineCount: 7
+    lineCount: 5
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1377,7 +1374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7248155181738754960
 Transform:
   m_ObjectHideFlags: 0

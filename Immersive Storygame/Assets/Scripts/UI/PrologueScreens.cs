@@ -19,8 +19,8 @@ public class PrologueScreens : MonoBehaviour
         SceneSetup();
         UserInterfaceState = 0;
         userInterfaceManager.popAll();
-        audioManager.Stop("Anubis");
-        audioManager.Play("Prologue_Mud_Music");
+        // audioManager.Stop("Anubis");
+        // audioManager.Play("");
     }
 
     public void SceneSetup()
@@ -53,6 +53,7 @@ public class PrologueScreens : MonoBehaviour
         else if (UserInterfaceState > 1)
         {
             userInterfaceManager.popUI("Text2");
+            audioManager.Stop("Theme");
             sceneManager.ChangeToScene("Scene04_Gameplay");
         }
     }

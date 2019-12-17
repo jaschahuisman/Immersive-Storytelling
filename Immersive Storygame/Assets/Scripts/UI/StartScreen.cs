@@ -14,7 +14,7 @@ public class StartScreen : MonoBehaviour
     public void Start()
     {
         SceneSetup();
-        audioManager.Play("Anubis");
+        audioManager.Play("Theme");
     }
 
     public void SceneSetup()

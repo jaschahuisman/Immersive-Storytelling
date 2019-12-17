@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 384236328181267694}
   - component: {fileID: 6122158319663726064}
   - component: {fileID: 4061946972358548599}
-  - component: {fileID: 4966271621163525794}
+  - component: {fileID: 8092264814895780530}
   m_Layer: 0
   m_Name: DoorPanel
   m_TagString: Untagged
@@ -157,8 +157,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4966271621163525794
-MeshCollider:
+--- !u!65 &8092264814895780530
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,10 +167,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7242087275055249086, guid: 236abad9c0d204b8bab6d63a37e73f16, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.050000034, y: 2.3999999, z: 1.5000011}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4020114317591930460
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4966271620793473821}
   m_Layer: 0
-  m_Name: Solid Door
+  m_Name: Solid_Door_Chip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,6 +398,8 @@ MonoBehaviour:
   closeOnEnter: 0
   closeOnExit: 1
   lockOnExit: 0
+  customLockMessage: 
+  customUnlockMessage: 
   openDistance: 1.5
   doorAudio: {fileID: 4966271622456529951}
 --- !u!82 &4966271622456529951
@@ -742,7 +743,7 @@ GameObject:
   - component: {fileID: 916445335279876037}
   - component: {fileID: 8559826677727251349}
   - component: {fileID: 4435236893645600428}
-  - component: {fileID: 4966271622440253135}
+  - component: {fileID: 4417354322983560885}
   m_Layer: 0
   m_Name: ChipScanner
   m_TagString: Untagged
@@ -810,8 +811,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4966271622440253135
-MeshCollider:
+--- !u!65 &4417354322983560885
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -820,10 +821,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2495791241769244192, guid: 63df1a4f5006a4f2bb0e041934bc98ec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.4042425, y: 1.1999999, z: 0.45239025}
+  m_Center: {x: -0.00000011920929, y: 0, z: -0.024074113}
 --- !u!1 &7847392882772305457
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 916445334055589551}
   - component: {fileID: 8559826676803005183}
   - component: {fileID: 4435236894869739462}
-  - component: {fileID: 4966271621283480721}
+  - component: {fileID: 7614912583218253409}
   m_Layer: 0
   m_Name: ChipScanner
   m_TagString: Untagged
@@ -903,8 +903,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4966271621283480721
-MeshCollider:
+--- !u!65 &7614912583218253409
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -913,7 +913,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2495791241769244192, guid: 63df1a4f5006a4f2bb0e041934bc98ec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.4042425, y: 1.1999999, z: 0.45239025}
+  m_Center: {x: -0.00000011920929, y: 0, z: -0.024074113}

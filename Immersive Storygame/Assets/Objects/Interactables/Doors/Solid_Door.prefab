@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 384236328181267694}
   - component: {fileID: 6122158319663726064}
   - component: {fileID: 4061946972358548599}
-  - component: {fileID: 4966271621163525794}
+  - component: {fileID: 5899848127988670380}
   m_Layer: 0
   m_Name: DoorPanel
   m_TagString: Untagged
@@ -157,8 +157,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4966271621163525794
-MeshCollider:
+--- !u!65 &5899848127988670380
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,10 +167,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7242087275055249086, guid: 236abad9c0d204b8bab6d63a37e73f16, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.050000034, y: 2.3999999, z: 1.5000011}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4020114318359151227
 GameObject:
   m_ObjectHideFlags: 0

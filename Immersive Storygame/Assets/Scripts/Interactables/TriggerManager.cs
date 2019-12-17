@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Playables;
 
 public class TriggerManager : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class TriggerManager : MonoBehaviour
     public string customLockMessage;
     public string customUnlockMessage;
     public GameObject[] doorGroup;
+
+    // DoorTrigger
+    public bool isCutsceneTrigger;
+    public PlayableDirector cutscene;
 
     private bool isInTrigger;
 
@@ -94,6 +99,7 @@ public class TriggerManager : MonoBehaviour
                 if (destroyItem == true) PickupTrigger();
                 if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
                 if (gameObjectStateToggle == true) ToggleSomething();
+                if (isCutsceneTrigger == true) PlayCutscene();
             }
         }
 
@@ -155,5 +161,10 @@ public class TriggerManager : MonoBehaviour
         {
             objectToToggle.SetActive(stateToToggleTo);
         }
+    }
+
+    public void PlayCutscene()
+    {
+        cutscene.Play();
     }
 }

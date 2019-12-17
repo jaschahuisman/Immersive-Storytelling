@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 6667559766010093988}
   - component: {fileID: 6667559766010094041}
   - component: {fileID: 6667559766010094042}
-  - component: {fileID: 6667559766010094043}
+  - component: {fileID: 5766200066045832006}
   m_Layer: 0
   m_Name: ChipScanner
   m_TagString: Untagged
@@ -719,8 +719,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6667559766010094043
-MeshCollider:
+--- !u!65 &5766200066045832006
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -729,10 +729,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2495791241769244192, guid: 63df1a4f5006a4f2bb0e041934bc98ec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.4042425, y: 1.1999999, z: 0.45239025}
+  m_Center: {x: 0, y: 0, z: -0.024073875}
 --- !u!1 &6667559766142683274
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +743,7 @@ GameObject:
   - component: {fileID: 6667559766142683273}
   - component: {fileID: 6667559766142683278}
   - component: {fileID: 6667559766142683279}
-  - component: {fileID: 6667559766142683272}
+  - component: {fileID: 2805912419858044768}
   m_Layer: 0
   m_Name: ChipScanner
   m_TagString: Untagged
@@ -812,8 +811,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6667559766142683272
-MeshCollider:
+--- !u!65 &2805912419858044768
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -822,10 +821,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2495791241769244192, guid: 63df1a4f5006a4f2bb0e041934bc98ec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.4042425, y: 1.1999999, z: 0.45239025}
+  m_Center: {x: 0, y: 0, z: -0.024074351}
 --- !u!1 &6667559766221355647
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +835,7 @@ GameObject:
   - component: {fileID: 6667559766221355646}
   - component: {fileID: 6667559766221355635}
   - component: {fileID: 6667559766221355644}
-  - component: {fileID: 6667559766221355645}
+  - component: {fileID: 7176169726952511401}
   m_Layer: 0
   m_Name: DoorPanel
   m_TagString: Untagged
@@ -905,8 +903,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6667559766221355645
-MeshCollider:
+--- !u!65 &7176169726952511401
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -915,7 +913,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7242087275055249086, guid: 236abad9c0d204b8bab6d63a37e73f16, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.050000034, y: 2.3999996, z: 1.5000011}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0}
