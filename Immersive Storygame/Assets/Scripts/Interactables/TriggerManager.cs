@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 public class TriggerManager : MonoBehaviour
 {
     public bool triggerOnAction;
+    public bool removeTriggerOnAction;
     public string customMessage;
 
     // Audio
@@ -84,8 +85,19 @@ public class TriggerManager : MonoBehaviour
             if (destroyItem == true) PickupTrigger();
             if (changeDoorGroupSettings == true) ChangeDoorGroupSettings();
             if (gameObjectStateToggle == true) ToggleSomething();
+            if (removeTriggerOnAction == true)
+            {
+                changeDoorGroupSettings = false;
+                gameObjectStateToggle = false;
+                source = null;
+                customMessage = null;
+                destroyItem = false;
+                triggerOnAction = false;
+            }
+
             userInterFaceManager.popUI("CustomRAD");
-            source.Play();
+            if (source)
+                source.Play();
         }
     }
 
